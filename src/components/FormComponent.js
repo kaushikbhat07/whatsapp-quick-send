@@ -21,15 +21,15 @@ class FormComponent extends Component {
 	}
 
 	onChangePhone(e) {
-		this.setState({ message: e.target.value })
+		this.setState({ phone: e.target.value })
 	}
 
 	handleClick(e) {
 		e.preventDefault();
 		if (window.screen.width > 768)
-			window.location.href = "https://web.whatsapp.com/send?phone=91" + this.state.phone + "&app_absent=0";
+			window.location.href = "https://web.whatsapp.com/send?phone=" + this.state.countryCode + "" + this.state.phone + "&app_absent=0";
 		else
-			window.location.href = "https://wa.me/91" + this.state.phone;
+			window.location.href = "https://wa.me/" + this.state.countryCode + "" + this.state.phone;
 	}
 
 	render() {
@@ -44,7 +44,7 @@ class FormComponent extends Component {
 					<form className="needs-validation" noValidate onSubmit={this.handleClick}>
 						<div class="form-row">
 							<div class="col-12 mb-3">
-								<input type="number" class="form-control" id="countryCode" required onChange={this.onChangeCountryCode} placeholder="Country Code (without '+')" validate />
+								<input type="number" class="form-control" id="countryCode" required onChange={this.onChangeCountryCode} placeholder="Country Code (without '+')" validate value={this.state.countryCode} />
 								<div class="valid-feedback">
 									Looks good!
 							</div>
