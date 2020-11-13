@@ -14,7 +14,8 @@
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+	<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -39,5 +40,25 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <script>
+		(function() {
+			// 'use strict';
+			window.addEventListener('load', function() {
+			  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+			  var forms = document.getElementsByClassName('needs-validation');
+			  // Loop over them and prevent submission
+			  var validation = Array.prototype.filter.call(forms, function(form) {
+				form.addEventListener('submit', function(event) {
+				  if (form.checkValidity() === false) {
+					event.preventDefault();
+					event.stopPropagation();
+				  }
+				  form.classList.add('was-validated');
+				}, false);
+			  });
+			}, false);
+		  })();	      
+    </script>
   </body>
 </html>
