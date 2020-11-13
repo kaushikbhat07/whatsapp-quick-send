@@ -13,9 +13,9 @@ function RouterPage() {
 				<Route exact path="/">
 					<App />
 				</Route>
-				<Route default>
+				{/* <Route default>
 					<App />
-				</Route>				
+				</Route>				 */}
 			</Switch>
 		</BrowserRouter>
 	);
