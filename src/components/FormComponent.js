@@ -1,28 +1,29 @@
 import React, { Component } from 'react';
+import './FormComponent.css';
 
 class FormComponent extends Component {
 
 	constructor(props) {
 		super(props);
 
-        this.onChangeName = this.onChangeName.bind(this);
-        this.onChangePhone = this.onChangePhone.bind(this);
-        this.handleClick = this.handleClick.bind(this);
+		this.onChangeCountryCode = this.onChangeCountryCode.bind(this);
+		this.onChangePhone = this.onChangePhone.bind(this);
+		this.handleClick = this.handleClick.bind(this);
 
 		this.state = {
 			phone: '',
-			message: ''
+			countryCode: 91
 		}
 	}
 
+	onChangeCountryCode(e) {
+		this.setState({ countryCode: e.target.value })
+	}
+
 	onChangePhone(e) {
-        this.setState({ phone: e.target.value })
+		this.setState({ message: e.target.value })
 	}
-	
-	onChangeName(e) {
-        this.setState({ message: e.target.value })
-	}
-		
+
 	handleClick(e) {
 		e.preventDefault();
 		if (window.screen.width > 768)
@@ -32,31 +33,48 @@ class FormComponent extends Component {
 	}
 
 	render() {
-		
-		return (
-			<div className="form-wrapper">
-				<form class="needs-validation" noValidate onSubmit={this.handleClick}>
-					<div class="form-row">
-						<div class="col-md-6 mb-3">
-							<label for="validationCustom01">Phone Number</label>
 
-							<input type="text" class="form-control" id="validationCustom01" required onChange={this.onChangePhone} />
-							<div class="valid-feedback">
-								Looks good!
-							</div>
-						</div>
-						<div class="col-md-6 mb-3">
-							<label for="validationCustom02">Message</label>
-							<input type="text" class="form-control" id="validationCustom02" required onChange={this.onChangeName} />
-							<div class="valid-feedback">
-								Looks good!
-							</div>
-						</div>
+		return (
+			<div className="col-12">
+				<div className="form-wrapper">
+					<div className="text-center">
+						<h3 className="sub-heading mb-5">WhatsApp Quick Chat</h3>
 					</div>
-					<button type="submit" class="btn btn-primary">SEND</button>
-				</form>
+				
+					<form className="needs-validation" noValidate onSubmit={this.handleClick}>
+						<div class="form-row">
+							<div class="col-12 mb-3">
+								<input type="number" class="form-control" id="countryCode" required onChange={this.onChangeCountryCode} placeholder="Country Code (without '+')" validate />
+								<div class="valid-feedback">
+									Looks good!
+							</div>
+								<div class="invalid-feedback">
+									Invalid input!
+							</div>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-12 mb-3">
+								{/* <label for="validationCustom02">Number</label> */}
+								<input type="number" class="form-control" id="phoneNumber" placeholder="Number" required onChange={this.onChangePhone} validate />
+								<div class="valid-feedback">
+									Looks good!
+							</div>
+								<div class="invalid-feedback">
+									Invalid input!
+							</div>
+							</div>
+						</div>
+						<div className="btn-wrapper">
+							<button type="submit" class="btn-send">
+								SEND&nbsp;
+							<i class="fa fa-paper-plane"></i>
+							</button>
+						</div>
+					</form>
+				</div>
 			</div>
-			
+
 		);
 	}
 }

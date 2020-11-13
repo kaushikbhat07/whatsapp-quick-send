@@ -2,8 +2,7 @@ import App from './App';
 import {
 	BrowserRouter,
 	Switch,
-	Route,
-	Link
+	Route
 } from 'react-router-dom';
 
 function RouterPage() {
@@ -13,9 +12,9 @@ function RouterPage() {
 				<Route exact path="/">
 					<App />
 				</Route>
-				{/* <Route default>
+				<Route default>
 					<App />
-				</Route>				 */}
+				</Route>				
 			</Switch>
 		</BrowserRouter>
 	);

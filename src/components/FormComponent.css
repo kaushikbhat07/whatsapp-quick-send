@@ -1,0 +1,36 @@
+button.btn-send,
+.btn-send:active {
+	background-color: #3f6ad8 !important;
+	border: none;
+	border-color: #fff;
+	color: #f0efeb !important;
+	border-radius: 3px !important;
+	padding: 11px 26px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	box-shadow: 0 8px 16px 0 rgba(63, 106, 216, 0.4), 0 6px 20px 0 rgba(63, 106, 216, 0.19);
+
+	font-weight: 100;
+}
+
+.form-wrapper {
+	width: 100%;
+	margin: auto;
+	margin-top: 15%;
+}
+
+@media only screen and (min-width: 768px) {
+	.form-wrapper {
+		padding: 0px 30%;
+	}
+}
+.btn-wrapper {
+	text-align: center;
+}
+.sub-heading {
+	color: #1d3557;
+}
+.form-control {
+	transition: none !important;
+}
