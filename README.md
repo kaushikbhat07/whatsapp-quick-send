@@ -1,8 +1,8 @@
 # Description
 
-A very simple tool that helps you send WhatsApp message to a number without the hassle of saving the contact. :laughing:
+A very simple tool that helps you send WhatsApp message to a number without the hassle of saving the contact. :smile:
 
-Found it useful at instances like when I had to send my home location to the courier delivery person immediately. :rofl:	
+Found it useful at instances like when I had to send my home location to the courier delivery person immediately.
 
 Deployed at: https://whatsappquick.web.app/
 
